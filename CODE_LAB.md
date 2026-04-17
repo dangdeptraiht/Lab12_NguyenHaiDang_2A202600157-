@@ -107,10 +107,10 @@ python app.py
 
 | Feature | Basic | Advanced | Tại sao quan trọng? |
 |---------|-------|----------|---------------------|
-| Config | Hardcode | Env vars | ... |
-| Health check |  |  | ... |
-| Logging | print() | JSON | ... |
-| Shutdown | Đột ngột | Graceful | ... |
+| Config | Hardcode | Env vars | Security and flexibility |
+| Health check | None | /health & /ready | Reliability monitoring |
+| Logging | print() | JSON | Observability |
+| Shutdown | Đột ngột | Graceful | Data integrity and reliability |
 
 ###  Checkpoint 1
 
