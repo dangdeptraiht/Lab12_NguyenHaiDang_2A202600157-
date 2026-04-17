@@ -10,8 +10,9 @@ Kết hợp TẤT CẢ những gì đã học trong 1 project hoàn chỉnh.
 - [x] Health check endpoint (`GET /health`)
 - [x] Readiness endpoint (`GET /ready`)
 - [x] API Key authentication
-- [x] Rate limiting
-- [x] Cost guard
+- [x] API Key authentication
+- [x] Rate limiting (Stateless via Redis)
+- [x] Cost guard (Stateless via Redis)
 - [x] Config từ environment variables
 - [x] Structured logging
 - [x] Graceful shutdown
@@ -24,18 +25,15 @@ Kết hợp TẤT CẢ những gì đã học trong 1 project hoàn chỉnh.
 ```
 06-lab-complete/
 ├── app/
-│   ├── main.py         # Entry point — kết hợp tất cả
-│   ├── config.py       # 12-factor config
-│   ├── auth.py         # API Key + JWT
-│   ├── rate_limiter.py # Rate limiting
-│   └── cost_guard.py   # Budget protection
+│   ├── main.py         # Entry point — Unified Stateless Agent
+│   └── config.py       # 12-factor config
 ├── Dockerfile          # Multi-stage, production-ready
-├── docker-compose.yml  # Full stack
+├── docker-compose.yml  # Full stack with Redis
 ├── railway.toml        # Deploy Railway
-├── render.yaml         # Deploy Render
-├── .env.example        # Template
+├── render.yaml         # Deploy Render (Blueprint)
+├── .env.example        # Environment template
 ├── .dockerignore
-└── requirements.txt
+└── requirements.txt    # Includes redis-py
 ```
 
 ---
